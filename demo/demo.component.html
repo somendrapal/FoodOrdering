@@ -1,0 +1,76 @@
+
+            <html>
+    <head>
+        <title>Dashboard</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+                box-sizing: border-box;
+            }
+            body {
+background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.4)),url(/assets/Images/cus.jpg);
+background-size: cover;
+background-position: center;
+
+background-repeat: no-repeat;
+            }
+           
+#backToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    font-size: 1.7em;
+    cursor: pointer;
+    padding: 0.8% 1.2%;
+    border-radius: 60%;
+}
+.full-page{
+text-align: center;
+background-color: #301e1e;
+ }
+.full-page ul {
+display: inline-flex;
+list-style: none;
+color: #f5ecec;
+}
+.full-page ul li {
+padding: 15px;
+width: 90px;
+margin: 15px;
+color: #0e0303;
+}
+.full-page ul li a {
+text-decoration: none;
+color: rgb(255, 248, 248);
+}
+.active, .full-page ul li:hover
+{
+background:#000000;
+border-radius: 3px
+}
+            </style>
+    </head>
+    <body>
+        <div class="full-page">
+        <ul>
+      
+<li><a [routerLink]="['/demo',{outlets: {'mphasis': ['customershow']}}]"> Show customer</a></li>
+<li><a [routerLink]="['/demo',{outlets: {'mphasis': ['customersearch']}}]"> Search customer</a></li>
+<li><a [routerLink]="['/demo',{outlets: {'mphasis': ['customertotalorders']}}]"> Total Orders</a></li>
+<li><a [routerLink]="['/demo',{outlets: {'mphasis': ['customerpendingorders']}}]">Pending Orders</a></li> 
+<li><a [routerLink]="['/demo',{outlets: {'mphasis': ['customertotalwallet']}}]"> Total Wallet</a></li>
+<li><a [routerLink]="['/demo',{outlets: {'mphasis': ['customerwallet']}}]"> Wallet </a></li> 
+<li><a [routerLink]="['/demo',{outlets: {'mphasis': ['placeorder']}}]"> Place Order </a></li> 
+<li><a [routerLink]="['/demo',{outlets: {'mphasis': ['showmenu']}}]"> show menu </a></li>
+<li><a [routerLink]="['/demo',{outlets: {'mphasis': ['searchmenu']}}]"> search menu </a></li>
+<li><a [routerLink]="['/demo',{outlets: {'mphasis': ['addwallet']}}]"> Add wallet </a></li>
+<li><a href="http://localhost:4200/"> Logout</a></li> 
+</ul></div>
+<router-outlet name="mphasis"></router-outlet>
+
+            </body></html>

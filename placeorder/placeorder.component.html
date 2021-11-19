@@ -1,0 +1,141 @@
+
+<html>
+    <head>
+    <style>
+     @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap');
+    
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    body {
+        align-items: center;
+        background: #D8AA96;
+        background-image: url(/assets/Images/placeord.jpg);
+	        background-position: center; 
+	        background-size: cover;
+        color: #000000;
+        display: grid;
+        font-size: 14px;
+        font-weight: 400;
+        height: 100vh;
+        justify-items: center;
+        font-weight: bold;
+    }
+    table{
+                position: absolute;
+                z-index: 2;
+                left: 60%;
+                top: 65%;
+                transform: translate(-50%,-50%);
+                width: 30%; 
+                height: 60vh;
+                border-collapse: collapse;
+                border-spacing: 0;
+                box-shadow: 0 2px 15px rgba(12, 12, 12, 0.7);
+                border-radius: 12px 12px 0 0;
+                overflow: hidden;
+
+            }
+            .puppy {
+        bottom: -5px;
+        position: absolute;
+        text-align: center;
+        }
+  
+    img {
+        
+        width: 90%;
+        height: 60vh;
+    }
+
+    .signup-container {
+    border: 3px solid #fff;
+    padding: 20px;
+        display: grid;
+        grid-template-areas: "left right";
+        max-width: 900px;
+    }
+    
+    .left-container {
+        background: #D8AA96;
+        overflow: hidden;
+        padding: 40px 0 0 0;
+        position: relative;
+        text-align: center;
+        width: 300px;
+      }
+        
+    .right-container {
+        background: lighten($primary-bg-color, 5%);
+        display: grid;
+        grid-template-areas: "." ".";
+        width: 500px;
+      
+       
+    }
+    .rcontainer {
+    width: 50%;
+    float: left;
+    padding: 20px;
+    border: 2px solid red;
+    
+    }
+    </style></head>
+    <body>
+    <div class="signup-container">
+    <div class="left-container">
+    <div class="first">
+      <img src="/assets/Images/menu1.jpg">
+    </div>
+    </div>
+    <div class="right-container">
+    <form id="Placeorder">
+    <table border="4" align="center">
+    <tr><th>Customer Id : </th>
+            <td><input type="number" name="orderdetails.ocid" [(ngModel)]="orderdetails.ocid" /></td>
+    </tr>
+    <tr>
+          <th> Select Menu Item </th>
+            <td><select [(ngModel)]="orderdetails.omid" name="omid" (change)="showAmount()">
+                <option *ngFor="let e of menu | async" value={{e.mid}}>
+                    {{e.mitem}}
+                </option>
+            </select> </td></tr>
+    <tr>
+            <th>Price :</th>
+            <td><input type="number" name="price" [(ngModel)]="price" readonly /></td></tr>
+    <tr>
+           <th> Restaurant</th>
+            <td><select [(ngModel)]="orderdetails.ovid" name="ovid">
+                <option *ngFor="let f of vendor | async" value={{f.vid}}>
+                    {{f.vname}}
+                </option>
+            </select> </td></tr>
+    <tr>
+            <th>order date :</th>
+                <td><input type="date" name="orderdetails.ord_date" [(ngModel)]="orderdetails.ord_date" /></td></tr>
+    <tr>
+           <th> Select Quantity : </th> 
+            <td><input type="number" [(ngModel)]="orderdetails.ord_quantity" name="ord_quantity" /></td></tr>
+    <tr>
+           <th> Select Wallet Type :</th>
+            <td><select [(ngModel)]="orderdetails.wal_source" name="wal_source">
+                <option *ngFor="let f of wallet | async" value={{f.wal_SOURCE}}>
+                    {{f.wal_SOURCE}}
+                </option>
+            </select> </td></tr>
+    <tr>
+           <th> Order Comments  :</th>
+            <td><input type="text" [(ngModel)]="orderdetails.ord_comments" name="ord_comments" />
+     </td></tr>
+    <tr>
+                <th colspan="3"><input type="button" value="Placeorder" (click)="placeOrder()" /></th>
+                </tr>
+           
+    </table>
+        </form></div></div>
+    </body>
+    </html>
+         

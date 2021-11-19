@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    
+    background-color:#000000;
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+color:#fff;
+    overflow: hidden;
+    cursor: url(cursor.png), auto;
+}
+
+video{
+    position: absolute;
+    top: 200px;
+    left: 700px;
+    right: 0;
+    width: 50%;
+}
+/*
+img{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 46%;
+    animation: 1s animate ease-in-out;
+}
+*/
+@keyframes animate{
+    0%{
+        opacity: 0;
+        transform: scale(.5);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.content h3{
+  font-size: 30px;
+  font-weight: 400;
+}
+nav{
+    display: flex;
+    justify-content: center;
+}
+ul{
+float: right;
+list-style-type: none;
+margin-top: 25px;
+}
+ul li{
+display: inline-block;
+}
+ul li a{
+text-decoration: none;
+color: rgb(64, 20, 184);
+font-weight: bold;
+padding: 5px 20px;
+border: 1px solid transparent;
+transition: 0.6s ease;
+}
+ul li a:hover{
+background-color: #fff;
+font-weight: bold;
+padding: 5px 20px;
+color: #000;
+}
+ul li.active a{
+background-color: #fff;
+color: #000;
+}
+/*
+ul{
+    list-style: none;
+    display: inline;
+}
+ul li{
+    display: inline-block;
+    padding: 40px;
+    font-size: 20px;
+    cursor: pointer;
+}
+*/
+.content{
+    position: absolute;
+    top: 27vh;
+    left: 10%;
+    width: 33%;
+}
+.content h1{
+    font-size: 60px;
+}
+hr{
+    margin-top: 30px;
+    width: 20%;
+    height: 6px;
+    background: #000;
+}
+.content p{
+    margin-top: 30px;
+    font-size: 30px;
+  font-weight: 400;
+}
+button{
+    margin-top: 20px;
+    background: #dfa167;
+    border: none;
+    outline: none;
+    letter-spacing: .04em;
+    font-size: 20px;
+    padding: 15px 20px;
+}
+.btn-btn-primary{
+  margin-top: 20px;
+    background: #dfa167;
+    border: none;
+    outline: none;
+    letter-spacing: .04em;
+    font-size: 20px;
+    padding: 15px 20px;
+}
+.btn.custom-btn {
+margin-top: 20px;
+    padding: 12px 25px;
+    font-family: 'Nunito', sans-serif;
+    margin-top: 20px;
+    font-size: 19px;
+    font-weight: 600;
+    color: #ffffff;
+    background: #fbaf32;
+    border: 2px solid #fbaf32;
+    border-radius: 5px;
+    transition: .5s;
+}
+
+.btn.custom-btn:hover {
+    color: #fbaf32;
+    background: transparent;
+}
+
+.btn.custom-btn:focus,
+.form-control:focus,
+.custom-select:focus {
+    box-shadow: none;
+}
+.container{
+max-width: 1200px;
+margin: auto;
+}
+</style>
+<body>
+  <div class="container">
+    <ul>
+      <li class="active"><a href="#">HOME</a></li>
+      <li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;LOGIN</a></li>
+      <li><a href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Features</a></li>
+      <li><a href="#Contact">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact</a></li>
+  </ul>
+        </div>
+<div class="content">
+       <h3>Are u hungry?</h3>
+       <h1>Don't wait!</h1>
+       <p>Order your food now</p>
+       <br/>
+       <br/><br/>
+       <a class="btn custom-btn" (click)="customerlogin()">Customer Login</a>&nbsp;&nbsp;&nbsp; 
+       <a class="btn custom-btn" (click)="vendorlogin()">Vendor Login</a>
+        
+    </div>
+    <video autoplay loop muted controls>
+        <source src="/assets/Images/my_video.mp4" type="video/mp4">
+    </video>
+
+</body>
+</html>

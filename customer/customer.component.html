@@ -1,0 +1,87 @@
+<html>
+    <head>
+        <style>
+            body {
+background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.4)),url(/assets/Images/cus.jpg);
+background-size: cover;
+background-position: center;
+
+background-repeat: no-repeat;
+            }
+             .styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 700px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+table.styled-table{
+    margin-right: auto;
+    margin-left: auto;
+        border: 4px solid #000000;
+            }
+.styled-table thead tr {
+    background-color:#3d2626;
+    color: #fdfdfd;
+    text-align: center;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    text-align: center;
+}
+styled-table tbody tr {
+    border-bottom: 1px solid #302222;
+    
+}
+
+
+    .styled-table tbody tr:nth-of-type(odd) {
+    background-color: #fff7f7;
+    color: #130000;
+}
+
+
+   
+
+first{
+                text-align:center;
+                color: #000000;
+                font-weight:bold;
+            }
+
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #f50303;
+}
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #fd0101;
+}
+        </style>
+    </head>
+    <body>
+        <div class="first">
+            <table align="center" class="styled-table" >
+         <thead>
+             <tr>
+                <th>cid</th>
+                <th>cname</th>
+                <th>cphno</th>
+                <th>cemail</th>
+             </tr>
+         </thead>
+         <tbody>
+            <tr *ngFor="let u of customer | async">
+                <td>{{u.cid}} </td>
+                <td>{{u.cname}} </td>
+                <td>{{u.cphno}} </td>
+                <td>{{u.cemail}} </td>
+            </tr>
+         </tbody>
+        </table>
+    </div>
+        
+    </body>
+</html><br/><br/>
